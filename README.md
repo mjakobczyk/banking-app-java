@@ -11,6 +11,12 @@ is a PoC in form of API that might be used for example in a web application.
 * [Java 11](https://www.java.com/pl/)
 * [Maven](https://maven.apache.org/)
 
+## Technologies
+
+* [Mockito](https://site.mockito.org)
+* [JUnit 4](https://junit.org/junit4/)
+* [AssertJ](https://assertj.github.io/doc/)
+
 ## Installation
 
 * move to the desired directory
