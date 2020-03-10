@@ -1,6 +1,7 @@
 package com.mjakobczyk.bank.credit.service.impl;
 
 import com.mjakobczyk.bank.credit.model.Credit;
+import com.mjakobczyk.bank.credit.service.CreditRepository;
 import com.mjakobczyk.bank.credit.service.CreditService;
 import com.mjakobczyk.bank.credit.service.CreditValidator;
 
@@ -9,6 +10,7 @@ import com.mjakobczyk.bank.credit.service.CreditValidator;
  */
 public class DefaultCreditService implements CreditService {
 
+    private CreditRepository creditRepository;
     private CreditValidator creditValidator;
 
     @Override
@@ -17,7 +19,15 @@ public class DefaultCreditService implements CreditService {
             return false;
         }
 
-        return true;
+        return creditRepository.addCreditTo(credit.getAccount(), credit);
+    }
+
+    public CreditRepository getCreditRepository() {
+        return creditRepository;
+    }
+
+    public void setCreditRepository(final CreditRepository creditRepository) {
+        this.creditRepository = creditRepository;
     }
 
     public CreditValidator getCreditValidator() {
